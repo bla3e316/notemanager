@@ -17,13 +17,34 @@
   </nav>
   <div class="container">
     <h1>Latest Notes!</h1>
-      {{#each notes}}
-        {{>note}}
-      {{/each}}
+      <ul class="collection">
+        {{#each notes}}
+          {{>note}}
+        {{/each}}
+      </ul>
   </div>
+    {{> add}}
+
+    <script>
+      $(document).ready(function(){
+        $('.modal').modal();
+       });  
+    </script>
 </body>
 
 <template name="note">
   <li class="collection-item">{{text}}</li>
+</template>
 
+<template name="add">
+  <!-- Modal Structure -->
+  <div id="addModal" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 </template>
