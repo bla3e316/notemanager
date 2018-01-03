@@ -1,0 +1,27 @@
+<head>
+  <title>Note Manager</title>
+</head>
+
+<body>
+  <nav class="red">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">NoteManager</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Latest Notes!</h1>
+      {{#each notes}}
+        {{>note}}
+      {{/each}}
+  </div>
+</body>
+
+<template name="note">
+  <li class="collection-item">{{text}}</li>
+
+</template>
