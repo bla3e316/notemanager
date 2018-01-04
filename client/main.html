@@ -28,7 +28,7 @@
     <script>
       $(document).ready(function(){
         $('.modal').modal();
-       });  
+       });
     </script>
 </body>
 
@@ -40,11 +40,15 @@
   <!-- Modal Structure -->
   <div id="addModal" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h3>Add Note</h3>
+      <form class="add-form">
+        <input type="text" name="text" placeholder="Add note...">
+
+      </form>
+      <!-- <p>A bunch of text</p> -->
     </div>
-    <div class="modal-footer">
+    <!-- <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+    </div> -->
   </div>
 </template>
