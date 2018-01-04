@@ -40,3 +40,10 @@ Template.add.events({
     return false;
   }
 });
+
+Template.note.events({
+  'click  .delete-note': function(){
+    Notes.remove(this._id);
+    return false;
+  }
+});
