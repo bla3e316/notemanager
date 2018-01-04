@@ -1,7 +1,13 @@
 import { Template } from 'meteor/templating';
 import { Notes } from '../lib/collections.js';
+import { Accounts } from 'meteor/accounts-base';
 
 import './main.html';
+
+//accounts config
+Accounts.ui.config({
+  passwordSignupFields:'USERNAME_ONLY'
+});
 
 Template.body.helpers({
   // notes:[
