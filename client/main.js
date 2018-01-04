@@ -29,6 +29,8 @@ Template.add.events({
       createdAt: new Date()
     });
 
+    //console.log(text);
+
     //clean form
     target.text.value = '';
 

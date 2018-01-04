@@ -1,5 +1,6 @@
 <head>
   <title>Note Manager</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +34,12 @@
 </body>
 
 <template name="note">
-  <li class="collection-item">{{text}}</li>
+  <li class="collection-item">
+    {{text}}
+    <a href="#" class="delete-note secondary-content">
+      <i class="material-icons">close</i>
+    </a>
+  </li>
 </template>
 
 <template name="add">
