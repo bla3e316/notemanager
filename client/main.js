@@ -4,6 +4,10 @@ import { Accounts } from 'meteor/accounts-base';
 
 import './main.html';
 
+$(document).ready(function () {
+  $('.parallax').parallax();
+});
+
 //accounts config
 Accounts.ui.config({
   passwordSignupFields:'USERNAME_ONLY'
