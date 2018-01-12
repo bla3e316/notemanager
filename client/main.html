@@ -4,30 +4,50 @@
 </head>
 
 <body>
-<nav class="red">
+<nav class="red darken-3">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo left">NoteManager</a>
-            <ul id="nav-mobile" class="right hide-on-small-only">
+            <a href="#" class="brand-logo left "><i class="material-icons">cloud</i>NoteManager</a>
+            <ul id="nav-mobile" class="right ">
                 {{#if currentUser}}
                     <li class="nav-item">
-                        <a class="waves-effect waves-light-2 btn btn-floating pulse modal-trigger" href="#addModal">
+                        <a>{{> loginButtons}}</a>
+                    </li>
+                    <li><a ><i class="material-icons">search</i></a></li>
+                    <li class="nav-item">
+                        <a class="waves-effect waves-light-2 btn btn-floating pulse modal-trigger " href="#addModal">
                             <i class="material-icons">add</i>
                         </a>
                     </li>
+
                 {{/if}}
-                <li class="nav-item">
-                    {{> loginButtons}}
-                </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="section white">
+
+<!--<div class="parallax-container">-->
+    <!--<div class="parallax"><img src="./images/alpine.jpg">-->
+        <!--<div class="row container">-->
+            <!--<h1>Latest Notes!</h1>-->
+            <!--{{#if currentUser}}-->
+                <!--<ul class="collection ">-->
+                    <!--{{#each notes}}-->
+                        <!--{{>note}}-->
+                    <!--{{/each}}-->
+                <!--</ul>-->
+            <!--{{else}}-->
+                <!--<p>Please log in to manage notes.</p>-->
+            <!--{{/if}}-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="section white ">
     <div class="row container">
         <h1>Latest Notes!</h1>
         {{#if currentUser}}
-            <ul class="collection">
+            <ul class="collection ">
                 {{#each notes}}
                     {{>note}}
                 {{/each}}
@@ -43,18 +63,23 @@
 </div>
 
 {{> add}}
-
 <script>
-    $(document).ready(function() {
+    $(document).ready(function(){
+        $('.parallax').parallax();
+        // Init Slider
+        $('.slider').slider();
+        // Init Modal
         $('.modal').modal();
+        // Init Sidenav
+        $('.button-collapse').sideNav();
     });
 </script>
 </body>
 
 <template name="note">
-    <li class="collection-item">
-        {{text}}: <strong>Added by {{username}}</strong>
-        <a href="#" class="delete-note secondary-content">
+    <li class="collection-item hoverable ">
+        {{text}}: <strong>Added by -{{username}}-</strong>
+        <a href="#" class="delete-note secondary-content" onclick="Materialize.toast('Note delete.', 4000)">
             <i class="material-icons">close</i>
         </a>
     </li>
@@ -66,7 +91,7 @@
         <div class="modal-content">
             <h3>Add Note</h3>
             <form class="add-form">
-                <input type="text" name="text" placeholder="Add note...">
+                <input type="text" name="text" placeholder="Add note..." onkeypress="Materialize.toast('Note added.', 4000)">
 
             </form>
             <!-- <p>A bunch of text</p> -->
