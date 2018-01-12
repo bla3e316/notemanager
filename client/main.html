@@ -11,7 +11,9 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {{#if currentUser}}
                     <li class="nav-item">
-                        <a class="waves-effect waves-light-2 btn modal-trigger" href="#addModal">Add Note</a>
+                        <a class="waves-effect waves-light-2 btn btn-floating pulse modal-trigger" href="#addModal">
+                            <i class="material-icons">add</i>
+                        </a>
                     </li>
                 {{/if}}
                 <li class="nav-item">
@@ -37,8 +39,9 @@
 </div>
 
 <div class="parallax-container">
-    <div class="parallax"><img src="./images/alpine.jpg"></div>
+    <div class="parallax"><img src="images/alpine.jpg"></div>
 </div>
+
 {{> add}}
 
 <script>
