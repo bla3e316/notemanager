@@ -13,7 +13,9 @@
                     <li class="nav-item">
                         <a>{{> loginButtons}}</a>
                     </li>
-                    <li><a ><i class="material-icons">search</i></a></li>
+                    <li>
+                        <a><i class="material-icons">search</i></a>
+                    </li>
                     <li class="nav-item">
                         <a class="waves-effect waves-light-2 btn btn-floating pulse modal-trigger " href="#addModal">
                             <i class="material-icons">add</i>
@@ -25,23 +27,17 @@
         </div>
     </div>
 </nav>
-
-<!--<div class="parallax-container">-->
-    <!--<div class="parallax"><img src="./images/alpine.jpg">-->
-        <!--<div class="row container">-->
-            <!--<h1>Latest Notes!</h1>-->
-            <!--{{#if currentUser}}-->
-                <!--<ul class="collection ">-->
-                    <!--{{#each notes}}-->
-                        <!--{{>note}}-->
-                    <!--{{/each}}-->
-                <!--</ul>-->
-            <!--{{else}}-->
-                <!--<p>Please log in to manage notes.</p>-->
-            <!--{{/if}}-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+<nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
 
 <div class="section white ">
     <div class="row container">
@@ -58,9 +54,9 @@
     </div>
 </div>
 
-<div class="parallax-container">
-    <div class="parallax"><img src="images/alpine.jpg"></div>
-</div>
+<!--<div class="parallax-container">-->
+    <!--<div class="parallax"><img src="images/alpine.jpg"></div>-->
+<!--</div>-->
 
 {{> add}}
 <script>
@@ -90,10 +86,11 @@
     <div id="addModal" class="modal">
         <div class="modal-content">
             <h3>Add Note</h3>
-            <form class="add-form">
-                <input type="text" name="text" placeholder="Add note..." onkeypress="Materialize.toast('Note added.', 4000)">
 
+            <form class="add-form">
+                <input type="text" name="text" placeholder="Add note..." >
             </form>
+
             <!-- <p>A bunch of text</p> -->
         </div>
         <!-- <div class="modal-footer">
