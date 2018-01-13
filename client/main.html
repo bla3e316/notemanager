@@ -12,6 +12,7 @@
                 <li class="nav-item">
                     <a>{{> loginButtons}}</a>
                 </li>
+
                 {{#if currentUser}}
                     <!--<li>-->
                         <!--<a><i class="material-icons">search</i></a>-->
@@ -58,6 +59,7 @@
 <!--</div>-->
 
 {{> add}}
+
 <script>
     $(document).ready(function(){
         $('.parallax').parallax();
@@ -67,14 +69,32 @@
         $('.modal').modal();
         // Init Sidenav
         $('.button-collapse').sideNav();
+        //Init Character Counter
+        $(document).ready(function() {
+            $('input#input_text, textarea#textarea1').characterCounter();
+        });
+        //Init Autocomplete
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": 'https://placehold.it/250x250'
+            },
+            limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+            onAutocomplete: function(val) {
+                // Callback function when value is autcompleted.
+            },
+            minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+        });
     });
 </script>
 </body>
 
 <template name="note">
     <li class="collection-item hoverable ">
+        <input type="checkbox" id="test5" />
         {{text}}: <strong>Added by -{{username}}-</strong>
-        <a href="#" class="delete-note secondary-content" onclick="Materialize.toast('Note delete.', 4000)">
+        <a href="#" class="delete-note secondary-content" onclick="Materialize.toast('{{username}} delete note.', 4000)">
             <i class="material-icons">close</i>
         </a>
     </li>
@@ -83,12 +103,16 @@
 <template name="add">
     <!-- Modal Structure -->
     <div id="addModal" class="modal">
-        <div class="modal-content">
-            <h3>Add Note</h3>
+        <div class="input-field col s12">
+            <!--<h3>Add Note</h3>-->
+            <div class="row">
+                <form class="add-form col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input id="icon_prefix" type="text" name="text" data-length="20" class="validate">
+                    <label for="icon_telephone">Add note...</label>
+                </form>
+            </div>
 
-            <form class="add-form">
-                <input type="text" name="text" placeholder="Add note..." >
-            </form>
 
             <!-- <p>A bunch of text</p> -->
         </div>
