@@ -7,37 +7,36 @@
 <nav class="red darken-3">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo left "><i class="material-icons">cloud</i>NoteManager</a>
+            <a href="#" class="brand-logo left "><i class="material-icons">cloud</i>Notes</a>
             <ul id="nav-mobile" class="right ">
+                <li class="nav-item">
+                    <a>{{> loginButtons}}</a>
+                </li>
                 {{#if currentUser}}
-                    <li class="nav-item">
-                        <a>{{> loginButtons}}</a>
-                    </li>
-                    <li>
-                        <a><i class="material-icons">search</i></a>
-                    </li>
+                    <!--<li>-->
+                        <!--<a><i class="material-icons">search</i></a>-->
+                    <!--</li>-->
                     <li class="nav-item">
                         <a class="waves-effect waves-light-2 btn btn-floating pulse modal-trigger " href="#addModal">
                             <i class="material-icons">add</i>
                         </a>
                     </li>
-
                 {{/if}}
             </ul>
         </div>
     </div>
 </nav>
-<nav>
-    <div class="nav-wrapper">
-        <form>
-            <div class="input-field">
-                <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-            </div>
-        </form>
-    </div>
-</nav>
+<!--<nav>-->
+    <!--<div class="nav-wrapper">-->
+        <!--<form>-->
+            <!--<div class="input-field">-->
+                <!--<input id="search" type="search" required>-->
+                <!--<label class="label-icon" for="search"><i class="material-icons">search</i></label>-->
+                <!--<i class="material-icons">close</i>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+<!--</nav>-->
 
 <div class="section white ">
     <div class="row container">
