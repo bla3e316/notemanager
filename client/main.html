@@ -7,7 +7,7 @@
 <nav class="red darken-3">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo left "><i class="material-icons">cloud</i>Notes</a>
+            <a href="#" class="brand-logo left"><i class="material-icons">cloud</i>Notes</a>
             <ul id="nav-mobile" class="right ">
                 <li class="nav-item">
                     <a>{{> loginButtons}}</a>
@@ -19,7 +19,7 @@
                     <!--</li>-->
                     <li class="nav-item">
                         <a class="waves-effect waves-light-2 btn btn-floating pulse modal-trigger " href="#addModal">
-                            <i class="material-icons">add</i>
+                            <i class="material-icons">create</i>
                         </a>
                     </li>
                 {{/if}}
@@ -41,6 +41,7 @@
 
 <div class="section white ">
     <div class="row container">
+        <a class="tooltipped" data-tooltip="I am a tooltip">Toolpit test</a>
         <h1>Latest Notes!</h1>
         {{#if currentUser}}
             <ul class="collection ">
@@ -70,9 +71,9 @@
         // Init Sidenav
         $('.button-collapse').sideNav();
         //Init Character Counter
-        $(document).ready(function() {
-            $('input#input_text, textarea#textarea1').characterCounter();
-        });
+        $('input#input_text, textarea#textarea1').characterCounter();
+        //Init Toolpins
+        $('.tooltipped').tooltip({delay: 50, position: "right"});
         //Init Autocomplete
         $('input.autocomplete').autocomplete({
             data: {
@@ -91,13 +92,13 @@
 </body>
 
 <template name="note">
-    <li class="collection-item hoverable ">
-        <input type="checkbox" id="test5" />
-        {{text}}: <strong>Added by -{{username}}-</strong>
-        <a href="#" class="delete-note secondary-content" onclick="Materialize.toast('{{username}} delete note.', 4000)">
-            <i class="material-icons">close</i>
-        </a>
-    </li>
+   <li class="collection-item hoverable ">
+           <!--<input type="checkbox" id="test5" />-->
+           {{text}}: <strong>Added by -{{username}}-</strong>
+           <a href="#" class="delete-note secondary-content tooltipped" data-position="right" data-tooltip="delete note" onclick="Materialize.toast('{{username}} delete note.', 4000)">
+               <i class="material-icons">close</i>
+           </a>
+       </li>
 </template>
 
 <template name="add">
