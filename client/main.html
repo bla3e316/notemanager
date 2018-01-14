@@ -42,7 +42,8 @@
 <div class="section white ">
     <div class="row container">
         <!--<a class="tooltipped" data-tooltip="I am a tooltip">Toolpit test</a>-->
-        <h3 class="center-align">Latest Notes!</h3>
+        <h3 class="center-align">Latest Notes {{>load}}</h3>
+
         {{#if currentUser}}
             <ul class="row">
                 {{#each notes}}
@@ -114,7 +115,7 @@
                     <i class="material-icons prefix">mode_edit</i>
                     <input id="icon_prefix" type="text" name="text" data-length="20" class="validate">
                     <label for="icon_telephone">Add note...</label>
-                    <button data-target="modal1" class="btn modal-trigger rounded z-depth-3">Confirm</button>
+                    <button data-target="modal1" class="btn modal-trigger rounded z-depth-3" type="submit" name="action"><i class="material-icons">send</i></button>
                 </form>
             </div>
 
@@ -124,5 +125,49 @@
         <!-- <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div> -->
+    </div>
+</template>
+
+<template name="load">
+    <div class="preloader-wrapper small active">
+        <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
     </div>
 </template>
