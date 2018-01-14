@@ -7,9 +7,9 @@
 <nav class="red darken-3">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo left"><i class="material-icons">cloud</i>Notes</a>
+            <a href="#" class="brand-logo left  tooltipped" data-position="bottom" data-tooltip="Wellcome to Cloud Notes manager"><i class="material-icons">cloud</i>Notes</a>
             <ul id="nav-mobile" class="right ">
-                <li class="nav-item">
+                <li class="nav-item tooltipped" data-position="bottom" data-tooltip=":)">
                     <a>{{> loginButtons}}</a>
                 </li>
 
@@ -17,9 +17,9 @@
                     <!--<li>-->
                         <!--<a><i class="material-icons">search</i></a>-->
                     <!--</li>-->
-                    <li class="nav-item">
-                        <a class="waves-effect waves-light-2 btn btn-floating pulse modal-trigger " href="#addModal">
-                            <i class="material-icons">create</i>
+                    <li class="nav-item tooltipped" data-position="bottom" data-tooltip="....">
+                        <a class="waves-effect waves-light-3 btn btn-floating pulse modal-trigger " href="#addModal">
+                            <i class="material-icons ">create</i>
                         </a>
                     </li>
                 {{/if}}
@@ -41,14 +41,16 @@
 
 <div class="section white ">
     <div class="row container">
-        <a class="tooltipped" data-tooltip="I am a tooltip">Toolpit test</a>
-        <h1>Latest Notes!</h1>
+        <!--<a class="tooltipped" data-tooltip="I am a tooltip">Toolpit test</a>-->
+        <h2>Latest Notes!</h2>
         {{#if currentUser}}
-            <ul class="collection ">
+            <div class="">
                 {{#each notes}}
-                    {{>note}}
+                    <div class="row hoverable" >
+                        {{>note}}
+                    </div>
                 {{/each}}
-            </ul>
+            </div>
         {{else}}
             <p>Please log in to manage notes.</p>
         {{/if}}
@@ -91,12 +93,13 @@
 </script>
 </body>
 
+
 <template name="note">
-   <li class="collection-item hoverable ">
+   <li class="collection-item">
            <!--<input type="checkbox" id="test5" />-->
            {{text}}: <strong>Added by -{{username}}-</strong>
            <a href="#" class="delete-note secondary-content tooltipped" data-position="right" data-tooltip="delete note" onclick="Materialize.toast('{{username}} delete note.', 4000)">
-               <i class="material-icons">close</i>
+               <i class="material-icons ">close</i>
            </a>
        </li>
 </template>
