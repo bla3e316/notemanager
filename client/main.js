@@ -47,7 +47,12 @@ Template.add.events({
     //close Modal
     $('#addModal').modal('close');
 
-    return false;
+      // $(document).ready(function(){
+      //     $('.parallax').parallax();
+      // });
+
+
+      return false;
   }
 });
 
